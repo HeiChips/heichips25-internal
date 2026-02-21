@@ -1,13 +1,60 @@
 all: macro copy-macro
 
-PDK_ROOT ?= ~/.ciel
-PDK ?= ihp-sg13g2
+export PDK_ROOT ?= /mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK
+export PDK ?= ihp-sg13g2
 
 RUN_TAG = $(shell ls librelane/runs/ | tail -n 1)
 
 # Macro - LibreLane
 
-macro:
+copy-local-ips:
+	rm -rf ./librelane/ips
+	mkdir -p librelane/ips
+
+	mkdir -p librelane/ips/multimode_dll
+	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/gds \
+		librelane/ips/multimode_dll
+	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/lef \
+		librelane/ips/multimode_dll
+	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/nl \
+		librelane/ips/multimode_dll
+	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/spef \
+		librelane/ips/multimode_dll
+	
+	mkdir -p librelane/ips/custom_cells
+	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/gds \
+		librelane/ips/custom_cells
+	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/lef \
+		librelane/ips/custom_cells
+	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/nl \
+		librelane/ips/custom_cells
+	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/spef \
+		librelane/ips/custom_cells	
+	
+	mkdir -p librelane/ips/delay_line
+	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/gds \
+		librelane/ips/delay_line
+	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/lef \
+		librelane/ips/delay_line
+	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/nl \
+		librelane/ips/delay_line
+	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/spef \
+		librelane/ips/delay_line
+	
+	mkdir -p librelane/ips/adc
+	cp -r ../x_adc/macro/adc/runs/adc_base/final/gds \
+		librelane/ips/adc
+	cp -r ../x_adc/macro/adc/runs/adc_base/final/lef \
+		librelane/ips/adc
+	cp -r ../x_adc/macro/adc/runs/adc_base/final/nl \
+		librelane/ips/adc
+	cp -r ../x_adc/macro/adc/runs/adc_base/final/spef \
+		librelane/ips/adc
+
+.PHONY: copy-local-ips
+
+
+macro: copy-local-ips
 	cd librelane; librelane config.yaml --pdk $(PDK)
 .PHONY: macro
 

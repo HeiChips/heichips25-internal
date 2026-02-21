@@ -1,0 +1,116 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO delay_line
+  CLASS BLOCK ;
+  FOREIGN delay_line ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 60.000 BY 60.000 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 15.380 0.000 17.580 60.000 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 0.000 16.280 60.000 18.480 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 0.000 46.280 60.000 48.480 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 21.580 0.000 23.780 60.000 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 0.000 22.480 60.000 24.680 ;
+    END
+  END VSS
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.450800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 59.600 17.020 60.000 17.420 ;
+    END
+  END clk
+  PIN clk_delayed
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 59.600 31.300 60.000 31.700 ;
+    END
+  END clk_delayed
+  PIN delay[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 30.040 0.000 30.440 0.400 ;
+    END
+  END delay[0]
+  PIN delay[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 37.180 0.400 37.580 ;
+    END
+  END delay[1]
+  PIN delay[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 38.860 0.400 39.260 ;
+    END
+  END delay[2]
+  PIN delay[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal2 ;
+        RECT 31.000 59.600 31.400 60.000 ;
+    END
+  END delay[3]
+  OBS
+      LAYER GatPoly ;
+        RECT 2.880 3.630 57.120 53.070 ;
+      LAYER Metal1 ;
+        RECT 2.880 3.560 57.120 53.140 ;
+      LAYER Metal2 ;
+        RECT 3.255 59.390 30.790 59.600 ;
+        RECT 31.610 59.390 56.745 59.600 ;
+        RECT 3.255 0.610 56.745 59.390 ;
+        RECT 3.255 0.400 29.830 0.610 ;
+        RECT 30.650 0.400 56.745 0.610 ;
+      LAYER Metal3 ;
+        RECT 0.400 39.470 59.600 53.020 ;
+        RECT 0.610 38.650 59.600 39.470 ;
+        RECT 0.400 37.790 59.600 38.650 ;
+        RECT 0.610 36.970 59.600 37.790 ;
+        RECT 0.400 31.910 59.600 36.970 ;
+        RECT 0.400 31.090 59.390 31.910 ;
+        RECT 0.400 17.630 59.600 31.090 ;
+        RECT 0.400 16.810 59.390 17.630 ;
+        RECT 0.400 3.680 59.600 16.810 ;
+  END
+END delay_line
+END LIBRARY
+

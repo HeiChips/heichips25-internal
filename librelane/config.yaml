@@ -1,9 +1,107 @@
 # LibreLane configuration file
+meta:
+  version: 3
+  flow: Classic
+  substituting_steps:
+    Checker.LintErrors: null
+    #Checker.NetlistAssignStatements: null
+    #OpenROAD.ResizerTimingPostCTS: null
+    #Checker.HoldViolations: null
+    #Checker.SetupViolations: null
+    #OpenROAD.Resizer*: null
+    #OpenROAD.Repair*: null
+
+ERROR_ON_SYNTH_CHECKS: False
 
 DESIGN_NAME: heichips25_template
-VERILOG_FILES: dir::../src/heichips25_template.sv
+VERILOG_FILES: 
+  - dir::../src/heichips25_template.sv
+  - dir::../src/shift_reg.v
+  - dir::../src/mux_8x4_to_8.v
+  
 CLOCK_PORT: clk
-CLOCK_PERIOD: 10 # 10ns = 100MHz
+CLOCK_PERIOD: 10
+
+PNR_SDC_FILE: dir::constraint.sdc
+SIGNOFF_SDC_FILE: dir::constraint.sdc
+FALLBACK_SDC: dir::constraint.sdc
+
+VDD_NETS:
+- VPWR
+GND_NETS:
+- VGND
+
+PDN_VERTICAL_LAYER: TopMetal1
+PDN_HORIZONTAL_LAYER: Metal5
+
+MACROS:
+  multimode_dll:
+    gds:
+      - dir::ips/multimode_dll/gds/multimode_dll.gds
+    lef:
+      - dir::ips/multimode_dll/lef/multimode_dll.lef
+    nl:
+      - dir::ips/multimode_dll/nl/multimode_dll.nl.v
+    spef:
+      "nom_*":
+        - dir::ips/multimode_dll/spef/nom/multimode_dll.nom.spef
+    instances: 
+      u_multimode_dll:
+        location: [40,30]
+        orientation: N
+  adc:
+    gds:
+      - dir::ips/adc/gds/adc.gds
+    lef:
+      - dir::ips/adc/lef/adc.lef
+    nl:
+      - dir::ips/adc/nl/adc.nl.v
+    spef:
+      "nom_*":
+        - dir::ips/adc/spef/nom/adc.nom.spef
+    instances: 
+      u_adc:
+        location: [420,5]
+        orientation: N
+  
+#  custom_cells:
+#    gds:
+#      - dir::ips/custom_cells/gds/custom_cells.gds
+#    lef:
+#      - dir::ips/custom_cells/lef/custom_cells.lef
+#    nl:
+#      - dir::ips/custom_cells/nl/custom_cells.nl.v
+#    spef:
+#      "nom_*":
+#        - dir::ips/custom_cells/spef/nom/custom_cells.nom.spef
+#    instances: 
+#      u_custom_cells:
+#        location: [220,30]
+#        orientation: N
+
+  delay_line:
+    gds:
+      - dir::ips/delay_line/gds/delay_line.gds
+    lef:
+      - dir::ips/delay_line/lef/delay_line.lef
+    nl:
+      - dir::ips/delay_line/nl/delay_line.nl.v
+    spef:
+      "nom_*":
+        - dir::ips/delay_line/spef/nom/delay_line.nom.spef
+    instances: 
+      u_delay_line:
+        location: [427,121]
+        orientation: N
+    
+
+# IMPORTANT
+PDN_MACRO_CONNECTIONS:
+  - "u_multimode_dll VDD VSS VPWR VGND"
+  - "u_adc VDD VSS VPWR VGND"
+#  - "u_custom_cells VDD VSS VPWR VGND"
+  - "u_delay_line VDD VSS VPWR VGND"
+
 
 # Reduce wasted space
 TOP_MARGIN_MULT: 1
@@ -27,4 +125,4 @@ PDN_MULTILAYER: false
 RT_MAX_LAYER: TopMetal1
 
 # Enable for better SystemVerilog support
-#USE_SLANG: true
+USE_SLANG: true

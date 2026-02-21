@@ -1,0 +1,108 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO custom_cells
+  CLASS BLOCK ;
+  FOREIGN custom_cells ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 40.000 BY 40.000 ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 15.380 0.000 17.580 40.000 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 0.000 16.280 40.000 18.480 ;
+    END
+  END VDD
+  PIN VSS
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 21.580 0.000 23.780 40.000 ;
+    END
+    PORT
+      LAYER Metal5 ;
+        RECT 0.000 22.480 40.000 24.680 ;
+    END
+  END VSS
+  PIN a
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 17.020 0.400 17.420 ;
+    END
+  END a
+  PIN b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 17.860 0.400 18.260 ;
+    END
+  END b
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 1.450800 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 39.600 17.860 40.000 18.260 ;
+    END
+  END clk
+  PIN sel
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.180700 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 0.000 18.700 0.400 19.100 ;
+    END
+  END sel
+  PIN y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 39.600 18.700 40.000 19.100 ;
+    END
+  END y
+  PIN z
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.708600 ;
+    PORT
+      LAYER Metal3 ;
+        RECT 39.600 19.540 40.000 19.940 ;
+    END
+  END z
+  OBS
+      LAYER GatPoly ;
+        RECT 2.880 3.630 36.960 34.170 ;
+      LAYER Metal1 ;
+        RECT 2.880 3.560 36.960 34.240 ;
+      LAYER Metal2 ;
+        RECT 3.255 3.635 37.545 34.165 ;
+      LAYER Metal3 ;
+        RECT 0.400 20.150 39.600 34.120 ;
+        RECT 0.400 19.330 39.390 20.150 ;
+        RECT 0.400 19.310 39.600 19.330 ;
+        RECT 0.610 18.490 39.390 19.310 ;
+        RECT 0.400 18.470 39.600 18.490 ;
+        RECT 0.610 17.650 39.390 18.470 ;
+        RECT 0.400 17.630 39.600 17.650 ;
+        RECT 0.610 16.810 39.600 17.630 ;
+        RECT 0.400 3.680 39.600 16.810 ;
+  END
+END custom_cells
+END LIBRARY
+
