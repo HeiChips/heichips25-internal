@@ -19,6 +19,7 @@ VERILOG_FILES:
   - dir::../src/shift_reg.v
   - dir::../src/mux_8x4_to_8.v
   - dir::../src/custom_cells.v
+  - dir::../src/dp_mem.v
   
 CLOCK_PORT: clk
 CLOCK_PERIOD: 10

@@ -50,6 +50,9 @@ copy-local-ips:
 		librelane/ips/adc
 	cp -r ../x_adc/macro/adc/runs/adc_base/final/spef \
 		librelane/ips/adc
+	
+	mkdir -p ./src
+	cp ../x_dp_mem/rtl/dp_mem.v ./src
 
 .PHONY: copy-local-ips
 
