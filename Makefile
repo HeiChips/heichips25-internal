@@ -22,14 +22,10 @@ copy-local-ips:
 		librelane/ips/multimode_dll
 	
 	mkdir -p librelane/ips/custom_cells
-	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/gds \
+	cp -r ../x_custom_cells/macro/custom_cells/konrads_cells \
 		librelane/ips/custom_cells
-	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/lef \
-		librelane/ips/custom_cells
-	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/nl \
-		librelane/ips/custom_cells
-	cp -r ../x_custom_cells/macro/custom_cells/runs/custom_cells_base/final/spef \
-		librelane/ips/custom_cells	
+	cp ../x_custom_cells/rtl/custom_cells.v \
+		./src
 	
 	mkdir -p librelane/ips/delay_line
 	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/gds \
@@ -40,16 +36,6 @@ copy-local-ips:
 		librelane/ips/delay_line
 	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/spef \
 		librelane/ips/delay_line
-	
-	mkdir -p librelane/ips/adc
-	cp -r ../x_adc/macro/adc/runs/adc_base/final/gds \
-		librelane/ips/adc
-	cp -r ../x_adc/macro/adc/runs/adc_base/final/lef \
-		librelane/ips/adc
-	cp -r ../x_adc/macro/adc/runs/adc_base/final/nl \
-		librelane/ips/adc
-	cp -r ../x_adc/macro/adc/runs/adc_base/final/spef \
-		librelane/ips/adc
 	
 	mkdir -p ./src
 	cp ../x_dp_mem/rtl/dp_mem.v ./src

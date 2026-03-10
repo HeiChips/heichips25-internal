@@ -1,5 +1,13 @@
 `default_nettype none
 
+/*
+================================================
+NOTE: EDIT THID FILE IN x_dp_mem/rtl/dp_mem.v 
+SINCE IT IS OVERWRITTEN BY THE MAKEFILE
+CHANGES MADE IN heichips25-template/src/dp_mem.v WILL BE LOST!
+================================================
+*/
+
 module tdp_dblpump_1p_wrap #(
   parameter int AW = 9,
   parameter int DW = 32

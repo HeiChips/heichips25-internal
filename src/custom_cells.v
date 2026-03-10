@@ -1,5 +1,66 @@
-`timescale 1ns/1ps
 `default_nettype none
+
+/*
+================================================
+NOTE: EDIT THID FILE IN x_custom_cells/rtl/custom_cells.v 
+SINCE IT IS OVERWRITTEN BY THE MAKEFILE
+CHANGES MADE IN heichips25-template/src/custom_cells.v WILL BE LOST!
+================================================
+*/
+
+// We dont have liberty files for the custom cells, 
+// so we declare them as blackboxes here.
+
+(* blackbox *)
+module latch
+(
+  output wire Q,
+  input wire D,
+  input wire GATE
+);
+endmodule
+
+(* blackbox *)
+module mux
+(
+  output wire X,
+  input wire A,
+  input wire B,
+  input wire SEL
+);
+endmodule
+
+(* blackbox *)
+module mux_inv
+(
+  output wire X,
+  input wire B,
+  input wire A,
+  input wire SEL
+);
+endmodule
+
+(* blackbox *)
+module SwitchMatrixMultiplexer
+(
+  output wire X,
+  input wire D,
+  input wire SEL,
+  input wire A,
+  input wire B
+);
+endmodule
+
+(* blackbox *)
+module SwitchMatrixMultiplexer_inv
+(
+  output wire X,
+  input wire D,
+  input wire SEL,
+  input wire A,
+  input wire B
+);
+endmodule
 
 // ============================================================
 // custom_cells.v  (behavioral models of the custom cells)
@@ -12,6 +73,14 @@ module mux2_1 (
     input  wire S,
     output wire Y
 );
+    /*(* keep *)
+    mux mux_inst(
+        .X(Y),
+        .A(A),
+        .B(B),
+        .SEL(S)
+    );*/
+    
     assign Y = S ? B : A;
 endmodule
 
@@ -22,15 +91,30 @@ module mux2_1_inv (
     input  wire S,
     output wire Y
 );
+    /*(* keep *)
+    mux_inv mux_inv_inst(
+        .X(Y),
+        .A(A),
+        .B(B),
+        .SEL(S)
+    );*/
+
     assign Y = ~(S ? B : A);
 endmodule
 
 // Level-sensitive latch (transparent when EN=1, holds when EN=0)
-module latch (
+module dlatch (
     input  wire D,
     input  wire EN,
     output reg  Q
 );
+    /*(* keep *)
+    latch latch_inst(
+        .D(D),
+        .Q(Q),
+        .GATE(EN)
+    );*/
+
     always @(D or EN) begin
         if (EN)
             Q <= D;
@@ -45,9 +129,40 @@ module mux2_1_latched (
     input  wire EN,
     output reg  Y
 );
+    /*(* keep *)
+    SwitchMatrixMultiplexer SwitchMatrixMultiplexer_inst(
+        .X(Y),
+        .A(A),
+        .B(B),
+        .SEL(S),
+        .D(EN)
+    );*/
+
     always @(A or B or S or EN) begin
         if (EN)
             Y <= (S ? B : A);
+    end
+endmodule
+
+module mux2_1_latched_inv (
+    input  wire A,
+    input  wire B,
+    input  wire S,
+    input  wire EN,
+    output reg  Y
+);
+    /*(* keep *)
+    SwitchMatrixMultiplexer_inv SwitchMatrixMultiplexer_inv_inst(
+        .X(Y),
+        .A(A),
+        .B(B),
+        .SEL(S),
+        .D(EN)
+    );*/
+
+    always @(A or B or S or EN) begin
+        if (EN)
+            Y <= ~(S ? B : A);
     end
 endmodule
 
@@ -88,17 +203,18 @@ module custom_cells (
     );
 
     // latch the latched-mux output on en1
-    latch u_latch0 (
+    dlatch u_latch0 (
         .D(y_mux_latched),
         .EN(en1),
         .Q(y_latch)
     );
 
     // a final mux stage to exercise chaining (select between latched and direct)
-    mux2_1 u_mux2 (
+    mux2_1_latched_inv u_final_mux (
         .A(y_latch),
         .B(y_mux),
         .S(s1),
+        .EN(en1),
         .Y(y_final)
     );
 endmodule

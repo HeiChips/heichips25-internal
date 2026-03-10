@@ -27,11 +27,10 @@ module heichips25_internal (
     // Dedicated pins
     inout  wire       analog_pin0,
     inout  wire       analog_pin1,
-    
-    inout  wire       analog_adc
+    inout  wire       analog_pin2
 );
 
-    localparam integer WIDTH = 86;
+    localparam integer WIDTH = 102;
     wire [WIDTH-1:0] data;
     
     wire clk0_out;
@@ -39,8 +38,6 @@ module heichips25_internal (
     wire clk2_out;
     wire osc_out;
     wire stable;
-    wire adc_ready;
-    wire [7:0] adc_data;
     wire clk_delayed;
     wire y_mux, y_mux_inv, y_latch, y_mux_latched, y_final;
 
@@ -79,35 +76,27 @@ module heichips25_internal (
         .osc_out               (osc_out),
         .stable                (stable)
     );
-
     (* keep *)
     clkbuf_16 u_clkbuf_analog_pin0 (.A(clk0_out), .X(analog_pin0));
     (* keep *)
     clkbuf_16 u_clkbuf_analog_pin1 (.A(clk1_out), .X(analog_pin1));
 
-    // Config data width is 1 => [66:66] bits. 
-    adc u_adc (
-        .clk      (clk),
-        .start    (data[66]),
-        .analog_in(analog_adc),
-        .ready    (adc_ready),
-        .data_out (adc_data)
-    );
-
-    // Config data width is 11 => [77:67] bits.
+    // Config data width is 28 => [93:66] bits.
     delay_line u_delay_line (
         .reset  (rst_n),
-        .trim   (data[74:67]),
-        .sel    (data[77:75]),
+        .trim   (data[89:66]),
+        .sel    (data[93:90]),
         .clk    (clk),
         .clk_delayed(clk_delayed)
     );
+    (* keep *)
+    clkbuf_16 u_clkbuf_analog_pin2 (.A(clk_delayed), .X(analog_pin2));
 
-    // Config data width is 8 => [85:78] bits.
+    // Config data width is 8 => [101:94] bits.
     custom_cells u_custom_cells (
-        .a(data[78]), .b(data[79]), .c(data[80]), .d(data[81]),
-        .s0(data[82]), .s1(data[83]),
-        .en0(data[84]), .en1(data[85]),
+        .a(data[94]), .b(data[95]), .c(data[96]), .d(data[97]),
+        .s0(data[98]), .s1(data[99]),
+        .en0(data[100]), .en1(data[101]),
         .y_mux(y_mux),
         .y_mux_inv(y_mux_inv),
         .y_latch(y_latch),
@@ -121,12 +110,12 @@ module heichips25_internal (
         .sel (ui_in[3:2]),
         // Multimode DLL outputs.
         .in0 ({clk0_out, clk1_out, clk2_out, osc_out, stable, 1'b0, 1'b0, 1'b0}),
-        // ADC outputs.
-        .in1 ({adc_ready, adc_data}),
-        // Delayed clock output.
-        .in2 ({clk_delayed, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}),
+        // Delayed Line output.
+        .in1 ({clk_delayed, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}),
         // Custom cell outputs (if any).
-        .in3 ({y_mux, y_mux_inv, y_latch, y_mux_latched, y_final, 1'b0, 1'b0, 1'b0}),
+        .in2 ({y_mux, y_mux_inv, y_latch, y_mux_latched, y_final, 1'b0, 1'b0, 1'b0}),
+        // Some
+        .in3 ({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}),
         // Dedicated outputs.
         .out (uio_out)
     );

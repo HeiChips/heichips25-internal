@@ -20,7 +20,23 @@ VERILOG_FILES:
   - dir::../src/mux_8x4_to_8.v
   - dir::../src/custom_cells.v
   - dir::../src/dp_mem.v
-  
+
+CELL_LEFS: 
+- "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef"
+- dir::ips/custom_cells/konrads_cells/lef/latch.lef
+- dir::ips/custom_cells/konrads_cells/lef/mux.lef
+- dir::ips/custom_cells/konrads_cells/lef/mux_inv.lef
+- dir::ips/custom_cells/konrads_cells/lef/SwitchMatrixMultiplexer.lef
+- dir::ips/custom_cells/konrads_cells/lef/SwitchMatrixMultiplexer_inv.lef
+
+CELL_GDS:
+- "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/gds/sg13g2_stdcell.gds"
+- dir::ips/custom_cells/konrads_cells/gds/latch.gds
+- dir::ips/custom_cells/konrads_cells/gds/mux.gds
+- dir::ips/custom_cells/konrads_cells/gds/mux_inv.gds
+- dir::ips/custom_cells/konrads_cells/gds/SwitchMatrixMultiplexer.gds
+- dir::ips/custom_cells/konrads_cells/gds/SwitchMatrixMultiplexer_inv.gds
+
 CLOCK_PORT: clk
 CLOCK_PERIOD: 10
 
@@ -51,38 +67,6 @@ MACROS:
       u_multimode_dll:
         location: [40,37]
         orientation: N
-  adc:
-    gds:
-      - dir::ips/adc/gds/adc.gds
-    lef:
-      - dir::ips/adc/lef/adc.lef
-    nl:
-      - dir::ips/adc/nl/adc.nl.v
-    spef:
-      "nom_*":
-        - dir::ips/adc/spef/nom/adc.nom.spef
-    instances: 
-      u_adc:
-        location: [414,7]
-        orientation: N
-
-# We cannot use Konrads Cells as a macro it
-# wont fit so we just implement it as a non-macro logic.
-# see: ./src/custom_cells.v for more details.
-#  custom_cells:
-#    gds:
-#      - dir::ips/custom_cells/gds/custom_cells.gds
-#    lef:
-#      - dir::ips/custom_cells/lef/custom_cells.lef
-#    nl:
-#      - dir::ips/custom_cells/nl/custom_cells.nl.v
-#    spef:
-#      "nom_*":
-#        - dir::ips/custom_cells/spef/nom/custom_cells.nom.spef
-#    instances: 
-#      u_custom_cells:
-#        location: [220,30]
-#        orientation: N
 
   delay_line:
     gds:
@@ -96,14 +80,12 @@ MACROS:
         - dir::ips/delay_line/spef/nom/delay_line.nom.spef
     instances: 
       u_delay_line:
-        location: [427,123]
+        location: [414,73]
         orientation: N
 
 # IMPORTANT
 PDN_MACRO_CONNECTIONS:
   - "u_multimode_dll VDD VSS VPWR VGND"
-  - "u_adc VDD VSS VPWR VGND"
-#  - "u_custom_cells VDD VSS VPWR VGND"
   - "u_delay_line VDD VSS VPWR VGND"
 
 

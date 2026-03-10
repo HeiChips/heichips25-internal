@@ -1,0 +1,199 @@
+// sch_path: /home/luemmel/Dokumente/Studienarbeit/new_lib/layouts/sch/mux.sch
+module mux
+(
+  output wire X,
+  input wire A,
+  input wire B,
+  input wire SEL
+);
+wire net1 ;
+wire net2 ;
+
+tri_buff
+#(
+.WP ( WP ) ,
+.WN ( WN )
+)
+x1 ( 
+ .S( SEL ),
+ .A( A ),
+ .X( net2 ),
+ .S_N( net1 )
+);
+
+
+tri_buff
+#(
+.WP ( WP ) ,
+.WN ( WN )
+)
+x2 ( 
+ .S( net1 ),
+ .A( B ),
+ .X( net2 ),
+ .S_N( SEL )
+);
+
+
+inv
+#(
+.WP ( 1.3e-06 ) ,
+.WN ( 8.8e-07 )
+)
+x3 ( 
+ .IN( net2 ),
+ .OUT( X )
+);
+
+
+inv
+#(
+.WP ( WP ) ,
+.WN ( WN )
+)
+x4 ( 
+ .IN( SEL ),
+ .OUT( net1 )
+);
+
+endmodule
+
+// expanding   symbol:  /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/tri_buff.sym # of pins=4
+// sym_path: /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/tri_buff.sym
+// sch_path: /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/tri_buff.sch
+module tri_buff
+#(
+  parameter WP = 1.02e-06,
+  parameter WN = 6.8e-07
+)
+(
+  input wire S,
+  input wire A,
+  output wire X,
+  input wire S_N
+);
+wire VDD ;
+wire net1 ;
+wire net2 ;
+wire GND ;
+
+
+sg13_lv_pmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WP ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_pmos ) ,
+.spiceprefix ( X )
+)
+M5 ( 
+ .D( net1 ),
+ .G( S ),
+ .S( VDD ),
+ .B( VDD )
+);
+
+
+sg13_lv_nmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WN ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_nmos ) ,
+.spiceprefix ( X )
+)
+M6 ( 
+ .D( net2 ),
+ .G( S_N ),
+ .S( GND ),
+ .B( GND )
+);
+
+
+sg13_lv_pmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WP ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_pmos ) ,
+.spiceprefix ( X )
+)
+M7 ( 
+ .D( X ),
+ .G( A ),
+ .S( net1 ),
+ .B( VDD )
+);
+
+
+sg13_lv_nmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WN ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_nmos ) ,
+.spiceprefix ( X )
+)
+M8 ( 
+ .D( X ),
+ .G( A ),
+ .S( net2 ),
+ .B( GND )
+);
+
+endmodule
+
+// expanding   symbol:  /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/inv.sym # of pins=2
+// sym_path: /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/inv.sym
+// sch_path: /home/luemmel/Dokumente/Studienarbeit/new_lib/schematics/inv.sch
+module inv
+#(
+  parameter WP = 1.3e-06,
+  parameter WN = 8.8e-07
+)
+(
+  input wire IN,
+  output wire OUT
+);
+wire VDD ;
+wire GND ;
+
+
+sg13_lv_pmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WP ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_pmos ) ,
+.spiceprefix ( X )
+)
+M9 ( 
+ .D( OUT ),
+ .G( IN ),
+ .S( VDD ),
+ .B( VDD )
+);
+
+
+sg13_lv_nmos
+#(
+.l ( 1.3e-07 ) ,
+.w ( WN ) ,
+.ng ( 1 ) ,
+.m ( 1 ) ,
+.model ( sg13_lv_nmos ) ,
+.spiceprefix ( X )
+)
+M10 ( 
+ .D( OUT ),
+ .G( IN ),
+ .S( GND ),
+ .B( GND )
+);
+
+endmodule
