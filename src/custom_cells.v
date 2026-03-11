@@ -73,15 +73,15 @@ module mux2_1 (
     input  wire S,
     output wire Y
 );
-    /*(* keep *)
+    (* keep *)
     mux mux_inst(
         .X(Y),
         .A(A),
         .B(B),
         .SEL(S)
-    );*/
+    );
     
-    assign Y = S ? B : A;
+    //assign Y = S ? B : A;
 endmodule
 
 // 2:1 mux with inverted output
@@ -91,15 +91,15 @@ module mux2_1_inv (
     input  wire S,
     output wire Y
 );
-    /*(* keep *)
+    (* keep *)
     mux_inv mux_inv_inst(
         .X(Y),
         .A(A),
         .B(B),
         .SEL(S)
-    );*/
+    );
 
-    assign Y = ~(S ? B : A);
+    //assign Y = ~(S ? B : A);
 endmodule
 
 // Level-sensitive latch (transparent when EN=1, holds when EN=0)
@@ -108,17 +108,17 @@ module dlatch (
     input  wire EN,
     output reg  Q
 );
-    /*(* keep *)
+    (* keep *)
     latch latch_inst(
         .D(D),
         .Q(Q),
         .GATE(EN)
-    );*/
+    );
 
-    always @(D or EN) begin
+    /*always @(D or EN) begin
         if (EN)
             Q <= D;
-    end
+    end*/
 endmodule
 
 // 2:1 mux whose output is latched (transparent when EN=1, holds when EN=0)
@@ -129,19 +129,19 @@ module mux2_1_latched (
     input  wire EN,
     output reg  Y
 );
-    /*(* keep *)
+    (* keep *)
     SwitchMatrixMultiplexer SwitchMatrixMultiplexer_inst(
         .X(Y),
         .A(A),
         .B(B),
         .SEL(S),
         .D(EN)
-    );*/
+    );
 
-    always @(A or B or S or EN) begin
+    /*always @(A or B or S or EN) begin
         if (EN)
             Y <= (S ? B : A);
-    end
+    end*/
 endmodule
 
 module mux2_1_latched_inv (
@@ -151,19 +151,19 @@ module mux2_1_latched_inv (
     input  wire EN,
     output reg  Y
 );
-    /*(* keep *)
+    (* keep *)
     SwitchMatrixMultiplexer_inv SwitchMatrixMultiplexer_inv_inst(
         .X(Y),
         .A(A),
         .B(B),
         .SEL(S),
         .D(EN)
-    );*/
+    );
 
-    always @(A or B or S or EN) begin
+    /*always @(A or B or S or EN) begin
         if (EN)
             Y <= ~(S ? B : A);
-    end
+    end*/
 endmodule
 
 // ============================================================

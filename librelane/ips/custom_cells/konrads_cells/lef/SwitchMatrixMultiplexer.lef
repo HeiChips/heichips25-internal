@@ -44,7 +44,7 @@ MACRO SwitchMatrixMultiplexer
     END
   END B
   PIN X
-    ANTENNADIFFAREA 0.784800 ;
+    ANTENNADIFFAREA 0.741600 ;
     PORT
       LAYER Metal1 ;
         RECT 5.080 0.500 5.480 1.325 ;
@@ -95,13 +95,13 @@ MACRO SwitchMatrixMultiplexer
         RECT 2.470 0.220 2.730 0.980 ;
         RECT 2.910 0.500 3.280 1.160 ;
         RECT 4.400 1.840 4.560 2.500 ;
-        RECT 4.740 2.020 5.080 2.660 ;
+        RECT 4.740 2.400 5.080 2.660 ;
         RECT 4.400 1.580 5.060 1.840 ;
         RECT 4.400 0.940 4.560 1.580 ;
         RECT 5.320 1.325 5.480 2.960 ;
         RECT 3.830 0.780 4.560 0.940 ;
         RECT 3.830 0.660 4.090 0.780 ;
-        RECT 4.740 0.220 4.900 1.325 ;
+        RECT 4.740 0.220 4.900 1.255 ;
   END
 END SwitchMatrixMultiplexer
 END LIBRARY
