@@ -1658,7 +1658,7 @@
             "X": "output"
           },
           "connections": {
-            "A": [ 561 ],
+            "A": [ 557 ],
             "X": [ 45 ]
           }
         },
@@ -1676,7 +1676,7 @@
             "X": "output"
           },
           "connections": {
-            "A": [ 560 ],
+            "A": [ 558 ],
             "X": [ 46 ]
           }
         },
@@ -1835,8 +1835,8 @@
             "clk": [ 2 ],
             "clk_delayed": [ 48 ],
             "reset": [ 44 ],
-            "sel": [ "0", "0", "1", "0" ],
-            "trim": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ]
+            "sel": [ 159, 160, 161, 162 ],
+            "trim": [ 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158 ]
           }
         },
         "u_multimode_dll": {
@@ -1871,9 +1871,9 @@
           },
           "connections": {
             "bias": [ 107 ],
-            "clk0_out": [ 561 ],
+            "clk0_out": [ 557 ],
             "clk0_phase_sel": [ 89, 90, 91, 92, 93 ],
-            "clk1_out": [ 560 ],
+            "clk1_out": [ 558 ],
             "clk1_phase_sel": [ 94, 95, 96, 97, 98 ],
             "clk2_out": [ 559 ],
             "clk2_phase_sel": [ 99, 100, 101, 102, 103 ],
@@ -1886,9 +1886,9 @@
             "f_osc_multiply_factor": [ 69, 70, 71, 72, 73 ],
             "mode_xor": [ 104, 105, 106 ],
             "osc": [ 2 ],
-            "osc_out": [ 558 ],
+            "osc_out": [ 561 ],
             "resetb": [ 44 ],
-            "stable": [ 557 ]
+            "stable": [ 560 ]
           }
         }
       },
@@ -2173,7 +2173,7 @@
         },
         "clk0_out": {
           "hide_name": 0,
-          "bits": [ 561 ],
+          "bits": [ 557 ],
           "attributes": {
             "hdlname": "clk0_out",
             "src": "../src/heichips25_internal.sv:61.10"
@@ -2181,7 +2181,7 @@
         },
         "clk1_out": {
           "hide_name": 0,
-          "bits": [ 560 ],
+          "bits": [ 558 ],
           "attributes": {
             "hdlname": "clk1_out",
             "src": "../src/heichips25_internal.sv:61.20"
@@ -2269,7 +2269,7 @@
         },
         "osc_out": {
           "hide_name": 0,
-          "bits": [ 558 ],
+          "bits": [ 561 ],
           "attributes": {
             "hdlname": "osc_out",
             "src": "../src/heichips25_internal.sv:61.40"
@@ -2285,7 +2285,7 @@
         },
         "stable": {
           "hide_name": 0,
-          "bits": [ 557 ],
+          "bits": [ 560 ],
           "attributes": {
             "hdlname": "stable",
             "src": "../src/heichips25_internal.sv:61.49"

@@ -10,7 +10,7 @@ CHANGES MADE IN heichips25-template/src/custom_cells.v WILL BE LOST!
 
 // We dont have liberty files for the custom cells, 
 // so we declare them as blackboxes here.
-
+/*
 (* blackbox *)
 module latch
 (
@@ -61,7 +61,7 @@ module SwitchMatrixMultiplexer_inv
   input wire B
 );
 endmodule
-
+*/
 // ============================================================
 // custom_cells.v  (behavioral models of the custom cells)
 // ============================================================

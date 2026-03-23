@@ -20,11 +20,37 @@ VERILOG_FILES:
   - dir::../src/mux_Nx4_to_N.v
   - dir::../src/custom_cells.v
   - dir::../src/dp_mem.v
+    #  - dir::ips/custom_cells/konrads_cells/verilog/all.v
+  
+CELL_VERILOG_MODELS:
+  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v"
+  - dir::ips/custom_cells/konrads_cells/verilog/all.v
+  
+LIB:
+ nom_typ_1p20V_25C:
+  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib"
+  - dir::ips/custom_cells/konrads_cells/lib/mux_rcxTT.lib
+  - dir::ips/custom_cells/konrads_cells/lib/mux_inv_rcxTT.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_rcxTT.lib
+  - dir::ips/custom_cells/konrads_cells/lib/latch_rcx_TT.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_inv_rcxTT.lib
+ 
+ nom_fast_1p32V_m40C:
+  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_fast_1p32V_m40C.lib"
+  - dir::ips/custom_cells/konrads_cells/lib/mux_rcxFF.lib
+  - dir::ips/custom_cells/konrads_cells/lib/mux_inv_rcxFF.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_rcxFF.lib
+  - dir::ips/custom_cells/konrads_cells/lib/latch_rcx_FF.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_inv_rcxFF.lib
+  
+ nom_slow_1p08V_125C:
+  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_slow_1p08V_125C.lib"
+  - dir::ips/custom_cells/konrads_cells/lib/mux_rcxSS.lib
+  - dir::ips/custom_cells/konrads_cells/lib/mux_inv_rcxSS.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_rcxSS.lib
+  - dir::ips/custom_cells/konrads_cells/lib/latch_rcx_SS.lib
+  - dir::ips/custom_cells/konrads_cells/lib/SwitchMatrixMultiplexer_inv_rcxSS.lib
 
-#LIB:
-# nom_typ_1p20V_25C:
-#  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib"
-#  - dir::ips/custom_cells/konrads_cells/lib/
 
 CELL_LEFS: 
 - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef"
@@ -93,22 +119,25 @@ PDN_MACRO_CONNECTIONS:
   - "u_multimode_dll VDD VSS VPWR VGND"
   - "u_delay_line VDD VSS VPWR VGND"
 
-#NON_DEFAULT_RULES:
-# NDR_3W_3S:
-#   width: ["*3"]
-#   spacing: ["*3"]
+NON_DEFAULT_RULES:
+ NDR_3W_3S:
+   width: ["*3"]
+   spacing: ["*3"]
    
-#DRT_ASSIGN_NDR:
-# "^analog_pin0$": NDR_3W_3S
-# "^analog_pin1$": NDR_3W_3S
-# "^analog_pin2$": NDR_3W_3S
+DRT_ASSIGN_NDR:
+ "^analog_pin0$": NDR_3W_3S
+ "^analog_pin1$": NDR_3W_3S
+ "^analog_pin2$": NDR_3W_3S
 
 # Reduce wasted space
 TOP_MARGIN_MULT: 1
 BOTTOM_MARGIN_MULT: 1
 LEFT_MARGIN_MULT: 6
 RIGHT_MARGIN_MULT: 6
-
+FP_MACRO_HORIZONTAL_HALO: 2
+FP_MACRO_VERTICAL_HALO: 1
+FP_PDN_HORIZONTAL_HALO: 2
+FP_PDN_VERTICAL_HALO: 2
 # Absolute die size
 FP_SIZING: absolute
 
@@ -123,6 +152,6 @@ FP_DEF_TEMPLATE: dir::def/heichips25_template_small_internal.def
 # Don't use power rings or TopMetal2 layer
 PDN_MULTILAYER: false
 RT_MAX_LAYER: TopMetal1
-
+ERROR_ON_SYNTH_CHECKS: False
 # Enable for better SystemVerilog support
 USE_SLANG: true

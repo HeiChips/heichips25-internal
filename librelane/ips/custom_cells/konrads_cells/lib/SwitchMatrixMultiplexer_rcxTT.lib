@@ -39,7 +39,7 @@ library (sg13g2_custom) {
     area : 0.0;
 pin ("X") {
 direction : output;
-function : "(!latch_Q * A) + (latch_Q * B)";
+function : "(!SEL * A) + (SEL * B)";
       timing () {
 related_pin : "A";
 timing_type : combinational;

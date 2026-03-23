@@ -86,7 +86,7 @@ module heichips25_internal #(
     // Config data width is 28 => [93:66] bits. data[89:66] data[93:90]
     wire clk_delayed;
     delay_line u_delay_line (
-        .reset(rst_n), .trim(24'b111111111111111111111111), .sel(4'd4),
+        .reset(rst_n), .trim(data[89:66]), .sel(data[93:90]),
         .clk(clk), .clk_delayed(clk_delayed)
     );
     (* keep *)
@@ -127,7 +127,7 @@ module heichips25_internal #(
     wire [MUX_W-1:0] mux_bus;
     mux_Nx4_to_N #(.MUX_W(MUX_W)) u_mux (
         .sel(ui_in[3:2]),
-        .in0({{(MUX_W-5){1'b0}}, clk0_out, clk1_out, clk2_out, osc_out, stable}),
+        .in0({{(MUX_W-5){1'b0}}, osc_out, stable,clk2_out, clk1_out, clk0_out}),
         .in1({{(MUX_W-1){1'b0}}, clk_delayed}),
         .in2({{(MUX_W-5){1'b0}}, y_mux, y_mux_inv, y_latch, y_mux_latched, y_final}),
         .in3({mem_phy_clk,mem_phy_wen,mem_phy_men,mem_phy_din,mem_phy_addr,delay,bit_mask,b_rdata, a_rdata}),
