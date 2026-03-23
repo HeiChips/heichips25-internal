@@ -14,6 +14,6 @@ module heichips25_internal(
   input rst_n,
   inout analog_pin0,
   inout analog_pin1,
-  inout analog_adc
+  inout analog_pin2
 );
 endmodule
