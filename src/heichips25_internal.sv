@@ -14,7 +14,11 @@ module clkbuf_16 (input  wire A, output wire X);
 endmodule
 
 (* noblackbox *)
-module heichips25_internal (
+module heichips25_internal #(
+    parameter integer AW = 4,    // 16 addresses
+    parameter integer DW = 4,    // 4-bit nibbles
+    parameter integer MUX_W = 24 
+)(
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -29,18 +33,14 @@ module heichips25_internal (
     inout  wire       analog_pin1,
     inout  wire       analog_pin2
 );
+    
 
-    localparam integer WIDTH = 102;
+    // --- 1. Configuration Shift Register ---
+    // Total bits: DLL(66) + Delay(28) + Custom(8) + Mem_A_Addr(4) + Mem_A_Data(4) = 110
+    localparam integer CONFIG_BASE = 102;
+    localparam integer WIDTH = CONFIG_BASE + (2*AW) + (4*DW); 
     wire [WIDTH-1:0] data;
     
-    wire clk0_out;
-    wire clk1_out;
-    wire clk2_out;
-    wire osc_out;
-    wire stable;
-    wire clk_delayed;
-    wire y_mux, y_mux_inv, y_latch, y_mux_latched, y_final;
-
     // Configure register to  read in serially from ui_in[1] when ui_in[0] is high, and output to data
     // The shift register is used to load the configuration data for the multimode DLL and other components.
     // The order of the configuration data matters.
@@ -54,11 +54,13 @@ module heichips25_internal (
         .data_out(data)
     );
 
+
+    // ---  DLL Instance ---
     // Config data width is 66 => [0:65] bits.
+
+    wire clk0_out, clk1_out, clk2_out, osc_out, stable;
     multimode_dll u_multimode_dll (
-        .resetb                (rst_n),
-        .enable                (ena),
-        .osc                   (clk),
+        .resetb(rst_n), .enable(ena), .osc(clk),
         .f_osc_multiply_factor (data[4:0]),
         .f_clk0_divider        (data[9:5]),
         .f_clk1_divider        (data[14:10]),
@@ -70,54 +72,74 @@ module heichips25_internal (
         .bias                  (data[38]),
         .dco                   (data[39]),
         .ext_trim              (data[65:40]),
-        .clk0_out              (clk0_out),
-        .clk1_out              (clk1_out),
-        .clk2_out              (clk2_out),
-        .osc_out               (osc_out),
-        .stable                (stable)
+        .clk0_out(clk0_out), .clk1_out(clk1_out), .clk2_out(clk2_out),
+        .osc_out(osc_out), .stable(stable)
     );
+    
     (* keep *)
     clkbuf_16 u_clkbuf_analog_pin0 (.A(clk0_out), .X(analog_pin0));
     (* keep *)
     clkbuf_16 u_clkbuf_analog_pin1 (.A(clk1_out), .X(analog_pin1));
 
-    // Config data width is 28 => [93:66] bits.
+
+    // ---  Delay Line Instance ---
+    // Config data width is 28 => [93:66] bits. data[89:66] data[93:90]
+    wire clk_delayed;
     delay_line u_delay_line (
-        .reset  (rst_n),
-        .trim   (data[89:66]),
-        .sel    (data[93:90]),
-        .clk    (clk),
-        .clk_delayed(clk_delayed)
+        .reset(rst_n), .trim(24'b111111111111111111111111), .sel(4'd4),
+        .clk(clk), .clk_delayed(clk_delayed)
     );
     (* keep *)
     clkbuf_16 u_clkbuf_analog_pin2 (.A(clk_delayed), .X(analog_pin2));
 
+    // ---  Custom Cells Instance ---
     // Config data width is 8 => [101:94] bits.
+
+    wire y_mux, y_mux_inv, y_latch, y_mux_latched, y_final;
     custom_cells u_custom_cells (
         .a(data[94]), .b(data[95]), .c(data[96]), .d(data[97]),
-        .s0(data[98]), .s1(data[99]),
-        .en0(data[100]), .en1(data[101]),
-        .y_mux(y_mux),
-        .y_mux_inv(y_mux_inv),
-        .y_latch(y_latch),
-        .y_mux_latched(y_mux_latched),
-        .y_final(y_final)
+        .s0(data[98]), .s1(data[99]), .en0(data[100]), .en1(data[101]),
+        .y_mux(y_mux), .y_mux_inv(y_mux_inv), .y_latch(y_latch),
+        .y_mux_latched(y_mux_latched), .y_final(y_final)
     );
 
-    // Select which of the four designs should be output
-    // to all dedicated outputs and IOs. The selection is based on ui_in[3:2].
-    mux_8x4_to_8 u_mux_8x4_to_8 (
-        .sel (ui_in[3:2]),
-        // Multimode DLL outputs.
-        .in0 ({clk0_out, clk1_out, clk2_out, osc_out, stable, 1'b0, 1'b0, 1'b0}),
-        // Delayed Line output.
-        .in1 ({clk_delayed, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}),
-        // Custom cell outputs (if any).
-        .in2 ({y_mux, y_mux_inv, y_latch, y_mux_latched, y_final, 1'b0, 1'b0, 1'b0}),
-        // Some
-        .in3 ({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}),
-        // Dedicated outputs.
-        .out (uio_out)
+    // ---  Double-Pumped Memory Wrapper ---
+    wire [DW-1:0] a_rdata, b_rdata;
+    wire mem_phy_clk, mem_phy_men, mem_phy_wen, mem_phy_ren;
+    wire [AW-1:0] mem_phy_addr;
+    wire [DW-1:0] mem_phy_din,bit_mask;
+    wire delay;
+    tdp_dblpump_1p_wrap #(.AW(AW), .DW(DW)) u_mem (
+        .clk(clk), .clk90(clk_delayed), .rst_n(rst_n),
+        .a_en(ui_in[4]), .a_we(ui_in[5]),
+        .a_addr(data[CONFIG_BASE +: AW]),
+        .a_wdata(data[(CONFIG_BASE+AW) +: DW]),
+        .a_bm(data[(CONFIG_BASE+AW +DW) +: DW]), .a_rdata(a_rdata),
+        .b_en(ui_in[6]), .b_we(ui_in[7]),
+        .b_addr(data[(CONFIG_BASE + AW + (2*DW)) +: AW]), .b_wdata(data[(CONFIG_BASE + (2*AW) + (2*DW) ) +: DW]),
+        .b_bm(data[(CONFIG_BASE + (2*AW) + (3*DW) ) +: DW]), .b_rdata(b_rdata),
+        // Physical interface to SRAM macro
+        .A_CLK(mem_phy_clk), .A_ADDR(mem_phy_addr), .A_DIN(mem_phy_din),
+        .A_MEN(mem_phy_men), .A_REN(),.A_WEN(mem_phy_wen), .A_DOUT(uio_in[3:0]) , .A_DLY(delay), .A_BM(bit_mask)
     );
+
+    // --- 24-bit Output Mux ---
+    wire [MUX_W-1:0] mux_bus;
+    mux_Nx4_to_N #(.MUX_W(MUX_W)) u_mux (
+        .sel(ui_in[3:2]),
+        .in0({{(MUX_W-5){1'b0}}, clk0_out, clk1_out, clk2_out, osc_out, stable}),
+        .in1({{(MUX_W-1){1'b0}}, clk_delayed}),
+        .in2({{(MUX_W-5){1'b0}}, y_mux, y_mux_inv, y_latch, y_mux_latched, y_final}),
+        .in3({mem_phy_clk,mem_phy_wen,mem_phy_men,mem_phy_din,mem_phy_addr,delay,bit_mask,b_rdata, a_rdata}),
+        .out(mux_bus)
+    );
+
+    // --- 7. Output Assignments (Total 24 bits) ---
+    assign uo_out  = mux_bus[7:0];   
+    assign uio_out = mux_bus[15:8];  
+    assign uio_oe = mux_bus[23:16]; 
+
+  
+   
 
 endmodule

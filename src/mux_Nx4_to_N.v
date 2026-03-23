@@ -1,10 +1,12 @@
-module mux_8x4_to_8 (
-    input  wire [7:0] in0,
-    input  wire [7:0] in1,
-    input  wire [7:0] in2,
-    input  wire [7:0] in3,
+module mux_Nx4_to_N #(
+  parameter int MUX_W = 21
+)(
+    input  wire [MUX_W-1:0] in0,
+    input  wire [MUX_W-1:0] in1,
+    input  wire [MUX_W-1:0] in2,
+    input  wire [MUX_W-1:0] in3,
     input  wire [1:0] sel,
-    output reg  [7:0] out
+    output reg  [MUX_W-1:0] out
 );
 
     always @(*) begin

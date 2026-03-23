@@ -17,9 +17,14 @@ DESIGN_NAME: heichips25_internal
 VERILOG_FILES: 
   - dir::../src/heichips25_internal.sv
   - dir::../src/shift_reg.v
-  - dir::../src/mux_8x4_to_8.v
+  - dir::../src/mux_Nx4_to_N.v
   - dir::../src/custom_cells.v
   - dir::../src/dp_mem.v
+
+#LIB:
+# nom_typ_1p20V_25C:
+#  - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib"
+#  - dir::ips/custom_cells/konrads_cells/lib/
 
 CELL_LEFS: 
 - "/mnt/SSD4TB/IHP_DELAY_LINE/heichips25_block/IHP-Open-PDK/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_stdcell.lef"
@@ -88,6 +93,15 @@ PDN_MACRO_CONNECTIONS:
   - "u_multimode_dll VDD VSS VPWR VGND"
   - "u_delay_line VDD VSS VPWR VGND"
 
+#NON_DEFAULT_RULES:
+# NDR_3W_3S:
+#   width: ["*3"]
+#   spacing: ["*3"]
+   
+#DRT_ASSIGN_NDR:
+# "^analog_pin0$": NDR_3W_3S
+# "^analog_pin1$": NDR_3W_3S
+# "^analog_pin2$": NDR_3W_3S
 
 # Reduce wasted space
 TOP_MARGIN_MULT: 1
