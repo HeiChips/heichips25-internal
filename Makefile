@@ -20,6 +20,8 @@ copy-local-ips:
 		librelane/ips/multimode_dll
 	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/spef \
 		librelane/ips/multimode_dll
+	cp -r ../x_multimode_dll/macro/multimode_dll/runs/multimode_dll_base/final/sdf \
+		librelane/ips/multimode_dll
 	
 	mkdir -p librelane/ips/custom_cells
 	cp -r ../x_custom_cells/macro/custom_cells/konrads_cells \
@@ -36,7 +38,9 @@ copy-local-ips:
 		librelane/ips/delay_line
 	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/spef \
 		librelane/ips/delay_line
-	
+	cp -r ../x_delay_line/macro/delay_line/runs/delay_line_base/final/sdf \
+		librelane/ips/delay_line
+
 	mkdir -p ./src
 	cp ../x_dp_mem/rtl/dp_mem.v ./src
 

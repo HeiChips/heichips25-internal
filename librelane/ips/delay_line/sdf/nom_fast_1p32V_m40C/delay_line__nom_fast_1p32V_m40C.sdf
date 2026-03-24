@@ -1,0 +1,2075 @@
+(DELAYFILE
+ (SDFVERSION "3.0")
+ (DESIGN "delay_line")
+ (DATE "Mon Mar 23 14:34:22 2026")
+ (VENDOR "Parallax")
+ (PROGRAM "STA")
+ (VERSION "2.7.0")
+ (DIVIDER .)
+ (VOLTAGE 1.320::1.320)
+ (PROCESS "1.000::1.000")
+ (TEMPERATURE -40.000::-40.000)
+ (TIMESCALE 1ns)
+ (CELL
+  (CELLTYPE "delay_line")
+  (INSTANCE)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT clk u_inbuf\.u_buf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT sel[3] input4.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT sel[2] input3.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT sel[1] input2.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT sel[0] input1.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[23] input20.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[22] input19.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[21] input18.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[20] input17.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[19] input15.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[18] input14.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[17] input13.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[16] input12.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[15] input11.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[14] input10.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[13] input9.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[12] input8.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[11] input7.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[10] input6.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[9] input28.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[8] input27.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[7] input26.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[6] input25.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[5] input24.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[4] input23.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[3] input22.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[2] input21.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[1] input16.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT trim[0] input5.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _06_.Y u_delay_mux\.gen_clockp_bufs\[12\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _07_.Y _09_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _07_.Y _16_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _07_.Y _21_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _08_.Y _09_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _08_.Y _11_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _08_.Y _13_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _08_.Y _14_.C (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _09_.Y u_delay_mux\.gen_clockp_bufs\[0\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _10_.Y _11_.B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _10_.Y _17_.A (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT _10_.Y _22_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _11_.Y u_delay_mux\.gen_clockp_bufs\[1\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _12_.Y _13_.B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _12_.Y _18_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _12_.Y _23_.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _13_.Y u_delay_mux\.gen_clockp_bufs\[2\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT _14_.Y u_delay_mux\.gen_clockp_bufs\[3\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _15_.Y _16_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _15_.Y _17_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _15_.Y _18_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _15_.Y _19_.C (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _16_.Y u_delay_mux\.gen_clockp_bufs\[4\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT _17_.Y u_delay_mux\.gen_clockp_bufs\[5\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT _18_.Y u_delay_mux\.gen_clockp_bufs\[6\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT _19_.Y u_delay_mux\.gen_clockp_bufs\[7\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _20_.Y _21_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _20_.Y _22_.B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _20_.Y _23_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _20_.Y _24_.C (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _21_.Y u_delay_mux\.gen_clockp_bufs\[8\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _22_.Y u_delay_mux\.gen_clockp_bufs\[9\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT _23_.Y u_delay_mux\.gen_clockp_bufs\[10\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT _24_.Y u_delay_mux\.gen_clockp_bufs\[11\]\.u_one_hot_tribuf\.u_ebuf.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delaybuf0\.u_buf.X dstage\[0\]\.id\.delaybuf1\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delaybuf0\.u_buf.X dstage\[0\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delaybuf0\.u_buf.X dstage\[0\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delaybuf1\.u_buf.X dstage\[0\]\.id\.delayen1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[0\]\.id\.delayen0\.u_einv.Z dstage\[1\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[0\]\.id\.delayen0\.u_einv.Z phase_taps\[1\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delayen0\.u_inv_te.Y dstage\[0\]\.id\.delayen0\.u_einv.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[0\]\.id\.delayen1\.u_einv.Z dstage\[0\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[0\]\.id\.delayen1\.u_inv_te.Y dstage\[0\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[0\]\.id\.delayenb0\.u_einv.Z dstage\[1\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[0\]\.id\.delayenb0\.u_einv.Z phase_taps\[1\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[0\]\.id\.delayenb1\.u_einv.Z dstage\[0\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[0\]\.id\.delayint0\.u_inv.Y dstage\[0\]\.id\.delayen0\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[10\]\.id\.delaybuf0\.u_buf.X dstage\[10\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delaybuf0\.u_buf.X dstage\[10\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[10\]\.id\.delaybuf0\.u_buf.X dstage\[10\]\.id\.delayenb1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delaybuf1\.u_buf.X dstage\[10\]\.id\.delayen1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delayen0\.u_einv.Z dstage\[11\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[10\]\.id\.delayen0\.u_einv.Z phase_taps\[11\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[10\]\.id\.delayen0\.u_inv_te.Y dstage\[10\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delayen1\.u_einv.Z dstage\[10\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delayen1\.u_inv_te.Y dstage\[10\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[10\]\.id\.delayenb0\.u_einv.Z dstage\[11\]\.id\.delaybuf0\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[10\]\.id\.delayenb0\.u_einv.Z phase_taps\[11\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.003:0.003:0.003) (0.003:0.003:0.003))
+    (INTERCONNECT dstage\[10\]\.id\.delayenb1\.u_einv.Z dstage\[10\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[10\]\.id\.delayint0\.u_inv.Y dstage\[10\]\.id\.delayen0\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[11\]\.id\.delaybuf0\.u_buf.X dstage\[11\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delaybuf0\.u_buf.X dstage\[11\]\.id\.delayenb0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delaybuf0\.u_buf.X dstage\[11\]\.id\.delayenb1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delaybuf1\.u_buf.X dstage\[11\]\.id\.delayen1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delayen0\.u_einv.Z phase_taps\[12\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[11\]\.id\.delayen0\.u_inv_te.Y dstage\[11\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delayen1\.u_einv.Z dstage\[11\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delayen1\.u_inv_te.Y dstage\[11\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[11\]\.id\.delayenb0\.u_einv.Z phase_taps\[12\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delayenb1\.u_einv.Z dstage\[11\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[11\]\.id\.delayint0\.u_inv.Y dstage\[11\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delaybuf0\.u_buf.X dstage\[1\]\.id\.delaybuf1\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[1\]\.id\.delaybuf0\.u_buf.X dstage\[1\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[1\]\.id\.delaybuf0\.u_buf.X dstage\[1\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[1\]\.id\.delaybuf1\.u_buf.X dstage\[1\]\.id\.delayen1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayen0\.u_einv.Z dstage\[2\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayen0\.u_einv.Z phase_taps\[2\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayen0\.u_inv_te.Y dstage\[1\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[1\]\.id\.delayen1\.u_einv.Z dstage\[1\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayen1\.u_inv_te.Y dstage\[1\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayenb0\.u_einv.Z dstage\[2\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayenb0\.u_einv.Z phase_taps\[2\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayenb1\.u_einv.Z dstage\[1\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[1\]\.id\.delayint0\.u_inv.Y dstage\[1\]\.id\.delayen0\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[2\]\.id\.delaybuf0\.u_buf.X dstage\[2\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[2\]\.id\.delaybuf0\.u_buf.X dstage\[2\]\.id\.delayenb0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[2\]\.id\.delaybuf0\.u_buf.X dstage\[2\]\.id\.delayenb1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[2\]\.id\.delaybuf1\.u_buf.X dstage\[2\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[2\]\.id\.delayen0\.u_einv.Z dstage\[3\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[2\]\.id\.delayen0\.u_einv.Z phase_taps\[3\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[2\]\.id\.delayen0\.u_inv_te.Y dstage\[2\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[2\]\.id\.delayen1\.u_einv.Z dstage\[2\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[2\]\.id\.delayen1\.u_inv_te.Y dstage\[2\]\.id\.delayen1\.u_einv.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[2\]\.id\.delayenb0\.u_einv.Z dstage\[3\]\.id\.delaybuf0\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[2\]\.id\.delayenb0\.u_einv.Z phase_taps\[3\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[2\]\.id\.delayenb1\.u_einv.Z dstage\[2\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[2\]\.id\.delayint0\.u_inv.Y dstage\[2\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delaybuf0\.u_buf.X dstage\[3\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delaybuf0\.u_buf.X dstage\[3\]\.id\.delayenb0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delaybuf0\.u_buf.X dstage\[3\]\.id\.delayenb1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delaybuf1\.u_buf.X dstage\[3\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[3\]\.id\.delayen0\.u_einv.Z dstage\[4\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delayen0\.u_einv.Z phase_taps\[4\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[3\]\.id\.delayen0\.u_inv_te.Y dstage\[3\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[3\]\.id\.delayen1\.u_einv.Z dstage\[3\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[3\]\.id\.delayen1\.u_inv_te.Y dstage\[3\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delayenb0\.u_einv.Z dstage\[4\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delayenb0\.u_einv.Z phase_taps\[4\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delayenb1\.u_einv.Z dstage\[3\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[3\]\.id\.delayint0\.u_inv.Y dstage\[3\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delaybuf0\.u_buf.X dstage\[4\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delaybuf0\.u_buf.X dstage\[4\]\.id\.delayenb0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delaybuf0\.u_buf.X dstage\[4\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[4\]\.id\.delaybuf1\.u_buf.X dstage\[4\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[4\]\.id\.delayen0\.u_einv.Z dstage\[5\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[4\]\.id\.delayen0\.u_einv.Z phase_taps\[5\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[4\]\.id\.delayen0\.u_inv_te.Y dstage\[4\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[4\]\.id\.delayen1\.u_einv.Z dstage\[4\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delayen1\.u_inv_te.Y dstage\[4\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delayenb0\.u_einv.Z dstage\[5\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delayenb0\.u_einv.Z phase_taps\[5\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[4\]\.id\.delayenb1\.u_einv.Z dstage\[4\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[4\]\.id\.delayint0\.u_inv.Y dstage\[4\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delaybuf0\.u_buf.X dstage\[5\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delaybuf0\.u_buf.X dstage\[5\]\.id\.delayenb0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delaybuf0\.u_buf.X dstage\[5\]\.id\.delayenb1\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delaybuf1\.u_buf.X dstage\[5\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[5\]\.id\.delayen0\.u_einv.Z dstage\[6\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayen0\.u_einv.Z phase_taps\[6\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayen0\.u_inv_te.Y dstage\[5\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayen1\.u_einv.Z dstage\[5\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[5\]\.id\.delayen1\.u_inv_te.Y dstage\[5\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayenb0\.u_einv.Z dstage\[6\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayenb0\.u_einv.Z phase_taps\[6\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[5\]\.id\.delayenb1\.u_einv.Z dstage\[5\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[5\]\.id\.delayint0\.u_inv.Y dstage\[5\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[6\]\.id\.delaybuf0\.u_buf.X dstage\[6\]\.id\.delaybuf1\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[6\]\.id\.delaybuf0\.u_buf.X dstage\[6\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[6\]\.id\.delaybuf0\.u_buf.X dstage\[6\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[6\]\.id\.delaybuf1\.u_buf.X dstage\[6\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[6\]\.id\.delayen0\.u_einv.Z dstage\[7\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[6\]\.id\.delayen0\.u_einv.Z phase_taps\[7\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[6\]\.id\.delayen0\.u_inv_te.Y dstage\[6\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[6\]\.id\.delayen1\.u_einv.Z dstage\[6\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[6\]\.id\.delayen1\.u_inv_te.Y dstage\[6\]\.id\.delayen1\.u_einv.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[6\]\.id\.delayenb0\.u_einv.Z dstage\[7\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[6\]\.id\.delayenb0\.u_einv.Z phase_taps\[7\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[6\]\.id\.delayenb1\.u_einv.Z dstage\[6\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[6\]\.id\.delayint0\.u_inv.Y dstage\[6\]\.id\.delayen0\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[7\]\.id\.delaybuf0\.u_buf.X dstage\[7\]\.id\.delaybuf1\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[7\]\.id\.delaybuf0\.u_buf.X dstage\[7\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[7\]\.id\.delaybuf0\.u_buf.X dstage\[7\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[7\]\.id\.delaybuf1\.u_buf.X dstage\[7\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[7\]\.id\.delayen0\.u_einv.Z dstage\[8\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[7\]\.id\.delayen0\.u_einv.Z phase_taps\[8\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[7\]\.id\.delayen0\.u_inv_te.Y dstage\[7\]\.id\.delayen0\.u_einv.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[7\]\.id\.delayen1\.u_einv.Z dstage\[7\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[7\]\.id\.delayen1\.u_inv_te.Y dstage\[7\]\.id\.delayen1\.u_einv.TE_B (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[7\]\.id\.delayenb0\.u_einv.Z dstage\[8\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[7\]\.id\.delayenb0\.u_einv.Z phase_taps\[8\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[7\]\.id\.delayenb1\.u_einv.Z dstage\[7\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[7\]\.id\.delayint0\.u_inv.Y dstage\[7\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[8\]\.id\.delaybuf0\.u_buf.X dstage\[8\]\.id\.delaybuf1\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delaybuf0\.u_buf.X dstage\[8\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delaybuf0\.u_buf.X dstage\[8\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delaybuf1\.u_buf.X dstage\[8\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[8\]\.id\.delayen0\.u_einv.Z dstage\[9\]\.id\.delaybuf0\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delayen0\.u_einv.Z phase_taps\[9\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delayen0\.u_inv_te.Y dstage\[8\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[8\]\.id\.delayen1\.u_einv.Z dstage\[8\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[8\]\.id\.delayen1\.u_inv_te.Y dstage\[8\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[8\]\.id\.delayenb0\.u_einv.Z dstage\[9\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[8\]\.id\.delayenb0\.u_einv.Z phase_taps\[9\]\.genblk1\.iinv_tap_odd\.u_inv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[8\]\.id\.delayenb1\.u_einv.Z dstage\[8\]\.id\.delayint0\.u_inv.A (0.000:0.000:0.000) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[8\]\.id\.delayint0\.u_inv.Y dstage\[8\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delaybuf0\.u_buf.X dstage\[9\]\.id\.delaybuf1\.u_buf.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[9\]\.id\.delaybuf0\.u_buf.X dstage\[9\]\.id\.delayenb0\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[9\]\.id\.delaybuf0\.u_buf.X dstage\[9\]\.id\.delayenb1\.u_einv.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[9\]\.id\.delaybuf1\.u_buf.X dstage\[9\]\.id\.delayen1\.u_einv.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[9\]\.id\.delayen0\.u_einv.Z dstage\[10\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayen0\.u_einv.Z phase_taps\[10\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.002:0.002:0.002))
+    (INTERCONNECT dstage\[9\]\.id\.delayen0\.u_inv_te.Y dstage\[9\]\.id\.delayen0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayen1\.u_einv.Z dstage\[9\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayen1\.u_inv_te.Y dstage\[9\]\.id\.delayen1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT dstage\[9\]\.id\.delayenb0\.u_einv.Z dstage\[10\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayenb0\.u_einv.Z phase_taps\[10\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayenb1\.u_einv.Z dstage\[9\]\.id\.delayint0\.u_inv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT dstage\[9\]\.id\.delayint0\.u_inv.Y dstage\[9\]\.id\.delayen0\.u_einv.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input1.X _07_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input1.X _10_.B_N (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input1.X _12_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input1.X _14_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input1.X _19_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input1.X _24_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input10.X dstage\[2\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input10.X dstage\[2\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input11.X dstage\[3\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input11.X dstage\[3\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input12.X dstage\[4\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input12.X dstage\[4\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input13.X dstage\[5\]\.id\.delayen1\.u_inv_te.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT input13.X dstage\[5\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT input14.X dstage\[6\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input14.X dstage\[6\]\.id\.delayenb1\.u_einv.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input15.X dstage\[7\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input15.X dstage\[7\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input16.X dstage\[1\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT input16.X dstage\[1\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input17.X dstage\[8\]\.id\.delayen1\.u_inv_te.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT input17.X dstage\[8\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT input18.X dstage\[9\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input18.X dstage\[9\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input19.X dstage\[10\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input19.X dstage\[10\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input2.X _07_.B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input2.X _10_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input2.X _12_.B_N (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input2.X _14_.B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input2.X _19_.B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input2.X _24_.B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input20.X dstage\[11\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input20.X dstage\[11\]\.id\.delayenb1\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input21.X dstage\[2\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input21.X dstage\[2\]\.id\.delayenb0\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT input22.X dstage\[3\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input22.X dstage\[3\]\.id\.delayenb0\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT input23.X dstage\[4\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input23.X dstage\[4\]\.id\.delayenb0\.u_einv.TE_B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input24.X dstage\[5\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input24.X dstage\[5\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input25.X dstage\[6\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input25.X dstage\[6\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input26.X dstage\[7\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT input26.X dstage\[7\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input27.X dstage\[8\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input27.X dstage\[8\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input28.X dstage\[9\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input28.X dstage\[9\]\.id\.delayenb0\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT input3.X _06_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input3.X _08_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input3.X _15_.B_N (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input3.X _20_.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input4.X _06_.B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input4.X _08_.B (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input4.X _15_.A (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input4.X _20_.B_N (0.002:0.002:0.002) (0.002:0.002:0.002))
+    (INTERCONNECT input5.X dstage\[0\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input5.X dstage\[0\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input6.X dstage\[10\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.000:0.000:0.000))
+    (INTERCONNECT input6.X dstage\[10\]\.id\.delayenb0\.u_einv.TE_B (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input7.X dstage\[11\]\.id\.delayen0\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input7.X dstage\[11\]\.id\.delayenb0\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT input8.X dstage\[0\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input8.X dstage\[0\]\.id\.delayenb1\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT input9.X dstage\[1\]\.id\.delayen1\.u_inv_te.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT input9.X dstage\[1\]\.id\.delayenb1\.u_einv.TE_B (0.002:0.002:0.002) (0.001:0.001:0.001))
+    (INTERCONNECT output29.X clk_delayed (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[0\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[0\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[10\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[10\]\.u_one_hot_tribuf\.u_ebuf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT phase_taps\[11\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[11\]\.u_one_hot_tribuf\.u_ebuf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT phase_taps\[12\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[12\]\.u_one_hot_tribuf\.u_ebuf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT phase_taps\[1\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[1\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[2\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[2\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[3\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[3\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[4\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[4\]\.u_one_hot_tribuf\.u_ebuf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT phase_taps\[5\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[5\]\.u_one_hot_tribuf\.u_ebuf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT phase_taps\[6\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[6\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[7\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[7\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[8\]\.genblk1\.ibuf_tap_even\.u_buf.X u_delay_mux\.gen_clockp_bufs\[8\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT phase_taps\[9\]\.genblk1\.iinv_tap_odd\.u_inv.Y u_delay_mux\.gen_clockp_bufs\[9\]\.u_one_hot_tribuf\.u_ebuf.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[0\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.006:0.006:0.006) (0.008:0.009:0.009))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[10\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.021:0.021:0.021) (0.029:0.032:0.034))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[11\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.011:0.011:0.011) (0.015:0.016:0.016))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[12\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.012:0.012:0.013) (0.017:0.019:0.020))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[1\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.012:0.012:0.012) (0.016:0.017:0.018))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[2\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.025:0.025:0.025) (0.034:0.036:0.039))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[3\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.040:0.041:0.042) (0.056:0.061:0.065))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[4\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.040:0.041:0.042) (0.056:0.060:0.064))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[5\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.049:0.051:0.053) (0.070:0.076:0.083))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[6\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.050:0.052:0.053) (0.071:0.077:0.084))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[7\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.060:0.062:0.064) (0.087:0.096:0.104))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[8\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.031:0.032:0.032) (0.044:0.049:0.054))
+    (INTERCONNECT u_delay_mux\.gen_clockp_bufs\[9\]\.u_one_hot_tribuf\.u_ebuf.Z u_delay_mux\.u_clkbuf\.u_buf.A (0.021:0.021:0.021) (0.029:0.032:0.034))
+    (INTERCONNECT u_delay_mux\.u_clkbuf\.u_buf.X output29.A (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT u_inbuf\.u_buf.X dstage\[0\]\.id\.delaybuf0\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT u_inbuf\.u_buf.X phase_taps\[0\]\.genblk1\.ibuf_tap_even\.u_buf.A (0.001:0.001:0.001) (0.001:0.001:0.001))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _06_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.062:0.062:0.062) (0.089:0.089:0.089))
+    (IOPATH B Y (0.065:0.065:0.065) (0.090:0.090:0.090))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2_1")
+  (INSTANCE _07_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.079:0.079:0.079) (0.055:0.055:0.055))
+    (IOPATH B Y (0.078:0.078:0.078) (0.053:0.053:0.053))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2_1")
+  (INSTANCE _08_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.086:0.086:0.086) (0.053:0.053:0.053))
+    (IOPATH B Y (0.084:0.084:0.084) (0.050:0.050:0.050))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _09_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.062:0.063:0.063) (0.100:0.101:0.102))
+    (IOPATH B Y (0.066:0.066:0.066) (0.104:0.104:0.104))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2b_1")
+  (INSTANCE _10_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.084:0.084:0.084) (0.056:0.056:0.056))
+    (IOPATH B_N Y (0.113:0.113:0.113) (0.074:0.074:0.074))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _11_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.062:0.063:0.063) (0.105:0.106:0.106))
+    (IOPATH B Y (0.063:0.064:0.066) (0.100:0.101:0.102))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2b_1")
+  (INSTANCE _12_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.082:0.082:0.082) (0.053:0.053:0.053))
+    (IOPATH B_N Y (0.113:0.113:0.113) (0.074:0.074:0.074))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _13_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.063:0.063:0.063) (0.106:0.107:0.107))
+    (IOPATH B Y (0.062:0.064:0.065) (0.099:0.101:0.102))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand3_1")
+  (INSTANCE _14_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.071:0.071:0.071) (0.131:0.131:0.131))
+    (IOPATH B Y (0.075:0.075:0.075) (0.135:0.135:0.135))
+    (IOPATH C Y (0.069:0.069:0.069) (0.138:0.138:0.138))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2b_1")
+  (INSTANCE _15_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.097:0.097:0.097) (0.056:0.056:0.056))
+    (IOPATH B_N Y (0.124:0.124:0.124) (0.075:0.075:0.075))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _16_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.061:0.062:0.062) (0.099:0.100:0.100))
+    (IOPATH B Y (0.066:0.067:0.068) (0.107:0.108:0.109))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _17_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.059:0.061:0.062) (0.100:0.102:0.103))
+    (IOPATH B Y (0.065:0.066:0.067) (0.107:0.107:0.108))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _18_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.062:0.063:0.064) (0.104:0.106:0.107))
+    (IOPATH B Y (0.068:0.069:0.070) (0.112:0.112:0.113))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand3_1")
+  (INSTANCE _19_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.073:0.073:0.073) (0.133:0.133:0.133))
+    (IOPATH B Y (0.076:0.076:0.076) (0.137:0.137:0.137))
+    (IOPATH C Y (0.071:0.072:0.073) (0.144:0.144:0.145))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nor2b_1")
+  (INSTANCE _20_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.086:0.086:0.086) (0.049:0.049:0.049))
+    (IOPATH B_N Y (0.114:0.114:0.114) (0.070:0.070:0.070))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _21_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.061:0.062:0.062) (0.099:0.099:0.100))
+    (IOPATH B Y (0.063:0.064:0.064) (0.102:0.103:0.104))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _22_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.059:0.060:0.062) (0.099:0.101:0.102))
+    (IOPATH B Y (0.062:0.063:0.064) (0.101:0.102:0.102))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand2_1")
+  (INSTANCE _23_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.059:0.060:0.061) (0.099:0.100:0.102))
+    (IOPATH B Y (0.063:0.063:0.064) (0.102:0.102:0.103))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_nand3_1")
+  (INSTANCE _24_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.071:0.071:0.071) (0.130:0.130:0.130))
+    (IOPATH B Y (0.074:0.074:0.074) (0.134:0.134:0.134))
+    (IOPATH C Y (0.066:0.067:0.068) (0.137:0.137:0.138))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[0\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.068:0.068:0.068) (0.065:0.065:0.065))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[0\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.060:0.060) (0.057:0.057:0.057))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[0\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.054:0.054:0.055) (0.055:0.055:0.055))
+    (IOPATH TE_B Z (0.058:0.058:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[0\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.042:0.042:0.042) (0.040:0.040:0.040))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[0\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032:0.032:0.032) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[0\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.040:0.040:0.040) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[0\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[0\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[0\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.036:0.037:0.037) (0.033:0.036:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[10\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.072:0.080:0.088) (0.070:0.075:0.080))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[10\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.062:0.063:0.063) (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[10\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.054:0.055:0.055) (0.054:0.054:0.055))
+    (IOPATH TE_B Z (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[10\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.042:0.042:0.042) (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[10\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.034:0.034:0.034))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[10\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.040:0.040:0.040) (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[10\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[10\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.035) (0.037:0.037:0.037))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[10\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.034:0.034:0.035) (0.031:0.033:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[11\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.073:0.080:0.087) (0.072:0.077:0.082))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[11\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.060:0.060) (0.056:0.056:0.057))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[11\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.042:0.042:0.043) (0.044:0.044:0.044))
+    (IOPATH TE_B Z (0.048:0.048:0.048))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[11\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.045:0.045:0.045) (0.044:0.044:0.044))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[11\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[11\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.041:0.041:0.041) (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[11\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.027:0.027:0.027) (0.028:0.028:0.028))
+    (IOPATH TE_B Z (0.035:0.035:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[11\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.035) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.039:0.039:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[11\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.034:0.034:0.035) (0.031:0.033:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[1\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.074:0.081:0.088) (0.072:0.077:0.083))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[1\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.060:0.061) (0.057:0.057:0.057))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[1\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.047:0.047:0.048) (0.049:0.049:0.049))
+    (IOPATH TE_B Z (0.052:0.052:0.052))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[1\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.043:0.043:0.043) (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[1\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032:0.032:0.032) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[1\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[1\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.030:0.030:0.030) (0.030:0.030:0.031))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[1\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.035) (0.037:0.037:0.037))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[1\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.035:0.035:0.036) (0.032:0.034:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[2\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.079:0.087) (0.070:0.075:0.079))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[2\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.059:0.059:0.059) (0.056:0.056:0.056))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[2\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.052:0.053:0.053) (0.053:0.053:0.053))
+    (IOPATH TE_B Z (0.058:0.058:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[2\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.044:0.044:0.044) (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[2\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.031:0.031:0.031) (0.032:0.032:0.032))
+    (IOPATH TE_B Z (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[2\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.038:0.038:0.038) (0.035:0.035:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[2\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.032:0.032:0.032))
+    (IOPATH TE_B Z (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[2\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[2\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.033:0.034:0.034) (0.030:0.033:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[3\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.074:0.081:0.089) (0.072:0.078:0.083))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[3\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.059:0.059:0.060) (0.056:0.056:0.056))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[3\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.045:0.045:0.046) (0.046:0.047:0.047))
+    (IOPATH TE_B Z (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[3\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.044:0.044:0.044) (0.043:0.043:0.043))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[3\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032:0.032:0.032) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[3\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[3\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029:0.029:0.029) (0.029:0.029:0.030))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[3\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[3\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.033:0.033:0.034) (0.030:0.032:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[4\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.079:0.087) (0.070:0.074:0.079))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[4\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.060:0.060) (0.056:0.056:0.056))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[4\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.055:0.055:0.056) (0.055:0.055:0.055))
+    (IOPATH TE_B Z (0.060:0.060:0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[4\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.045:0.045:0.045) (0.044:0.044:0.044))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[4\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032:0.032:0.032) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[4\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.042:0.042:0.042) (0.039:0.039:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[4\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[4\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.039:0.039:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[4\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.034:0.035:0.035) (0.031:0.034:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[5\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.074:0.081:0.088) (0.072:0.077:0.083))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[5\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.059:0.059:0.060) (0.056:0.056:0.056))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[5\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.045:0.045:0.046) (0.047:0.047:0.047))
+    (IOPATH TE_B Z (0.050:0.050:0.050))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[5\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.043:0.043:0.043) (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[5\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.031:0.031:0.031) (0.032:0.032:0.032))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[5\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.041:0.041:0.041) (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[5\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029:0.029:0.029) (0.029:0.030:0.030))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[5\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[5\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.033:0.033:0.034) (0.030:0.032:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[6\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.080:0.088) (0.070:0.074:0.079))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[6\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.061:0.061:0.061) (0.057:0.057:0.057))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[6\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.053:0.054:0.054) (0.054:0.054:0.054))
+    (IOPATH TE_B Z (0.058:0.058:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[6\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.044:0.044:0.044) (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[6\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[6\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[6\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[6\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.035) (0.037:0.037:0.037))
+    (IOPATH TE_B Z (0.039:0.039:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[6\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.034:0.034:0.034) (0.031:0.033:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[7\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.073:0.080:0.087) (0.071:0.076:0.081))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[7\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.059:0.059:0.059) (0.056:0.056:0.056))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[7\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.046:0.047:0.047) (0.049:0.049:0.049))
+    (IOPATH TE_B Z (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[7\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.042:0.042:0.042) (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[7\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.032:0.032:0.032) (0.033:0.033:0.033))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[7\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.035:0.035:0.035))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[7\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.029:0.029:0.030) (0.030:0.030:0.030))
+    (IOPATH TE_B Z (0.037:0.037:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[7\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.035) (0.036:0.036:0.036))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[7\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.036:0.036:0.037) (0.033:0.035:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[8\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.079:0.087) (0.070:0.074:0.079))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[8\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.060:0.061) (0.057:0.057:0.057))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[8\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.055:0.055:0.056) (0.056:0.056:0.056))
+    (IOPATH TE_B Z (0.060:0.060:0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[8\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.044:0.044:0.044) (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[8\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.034:0.034:0.034))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[8\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[8\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.034:0.034:0.034) (0.034:0.034:0.034))
+    (IOPATH TE_B Z (0.042:0.042:0.042))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[8\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.036) (0.037:0.037:0.037))
+    (IOPATH TE_B Z (0.039:0.039:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[8\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.035:0.036:0.036) (0.032:0.035:0.037))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE dstage\[9\]\.id\.delaybuf0\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.073:0.080:0.087) (0.071:0.077:0.082))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE dstage\[9\]\.id\.delaybuf1\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.061:0.061:0.061) (0.057:0.057:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[9\]\.id\.delayen0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.047:0.048:0.048) (0.049:0.049:0.049))
+    (IOPATH TE_B Z (0.052:0.052:0.052))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[9\]\.id\.delayen0\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.043:0.043:0.043) (0.041:0.041:0.041))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[9\]\.id\.delayen1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.033:0.033:0.033) (0.034:0.034:0.034))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[9\]\.id\.delayen1\.u_inv_te)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.039:0.039:0.039) (0.036:0.036:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_8")
+  (INSTANCE dstage\[9\]\.id\.delayenb0\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.030:0.030:0.030) (0.030:0.030:0.030))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_einvn_4")
+  (INSTANCE dstage\[9\]\.id\.delayenb1\.u_einv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.035:0.035:0.035) (0.037:0.037:0.037))
+    (IOPATH TE_B Z (0.038:0.038:0.038))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_1")
+  (INSTANCE dstage\[9\]\.id\.delayint0\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.034:0.034:0.035) (0.031:0.033:0.036))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input1)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.076:0.076:0.076) (0.071:0.071:0.071))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input10)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.057:0.057) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input11)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.058:0.058:0.058) (0.052:0.052:0.052))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input12)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.062:0.062:0.062) (0.055:0.055:0.055))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input13)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.056:0.056:0.056) (0.050:0.050:0.050))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input14)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.059:0.059:0.059) (0.053:0.053:0.053))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input15)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.057:0.057) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input16)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.070:0.070:0.070) (0.060:0.060:0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input17)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.057:0.057) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input18)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.056:0.056:0.056) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input19)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.057:0.057) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input2)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.079:0.079:0.079) (0.072:0.072:0.072))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input20)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.058:0.058:0.058) (0.052:0.052:0.052))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input21)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.071:0.071) (0.061:0.061:0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input22)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.071:0.071) (0.062:0.062:0.062))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input23)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.074:0.074:0.074) (0.064:0.064:0.064))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input24)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.072:0.072:0.072) (0.062:0.062:0.062))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input25)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.070:0.070:0.070) (0.061:0.061:0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input26)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.070:0.070:0.070) (0.060:0.060:0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input27)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.071:0.071:0.071) (0.061:0.061:0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input28)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.069:0.069:0.069) (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input3)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.061:0.061:0.061) (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input4)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.062:0.062:0.062) (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input5)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.070:0.070:0.070) (0.061:0.061:0.061))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input6)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.069:0.069:0.069) (0.059:0.059:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input7)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.069:0.069:0.069) (0.060:0.060:0.060))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input8)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.057:0.057) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE input9)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.058:0.058:0.058) (0.051:0.051:0.051))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_1")
+  (INSTANCE output29)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.034:0.035:0.036) (0.035:0.037:0.039))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[0\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.054:0.054:0.054) (0.046:0.046:0.046))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[10\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.058:0.067:0.076) (0.050:0.055:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[11\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.017:0.019:0.021) (0.017:0.020:0.023))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[12\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.056:0.066:0.076) (0.049:0.053:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[1\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.017:0.019:0.021) (0.017:0.020:0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[2\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.067:0.076) (0.050:0.054:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[3\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.016:0.018:0.020) (0.016:0.019:0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[4\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.066:0.076) (0.049:0.054:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[5\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.017:0.019:0.021) (0.017:0.019:0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[6\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.057:0.067:0.076) (0.049:0.054:0.058))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[7\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.017:0.018:0.020) (0.016:0.019:0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_4")
+  (INSTANCE phase_taps\[8\]\.genblk1\.ibuf_tap_even\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.058:0.067:0.076) (0.050:0.055:0.059))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_inv_4")
+  (INSTANCE phase_taps\[9\]\.genblk1\.iinv_tap_odd\.u_inv)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Y (0.017:0.019:0.021) (0.017:0.020:0.022))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[0\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.167:0.167:0.167) (0.184:0.184:0.184))
+    (IOPATH TE_B Z (0.160:0.161:0.162) (0.280:0.280:0.281))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[10\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.154:0.154:0.155) (0.164:0.164:0.164))
+    (IOPATH TE_B Z (0.146:0.147:0.148) (0.247:0.248:0.249))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[11\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.159:0.160:0.161) (0.173:0.175:0.176))
+    (IOPATH TE_B Z (0.165:0.165:0.166) (0.276:0.277:0.277))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[12\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.156:0.156:0.157) (0.166:0.166:0.166))
+    (IOPATH TE_B Z (0.147:0.148:0.148) (0.248:0.249:0.249))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[1\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.165:0.166:0.167) (0.183:0.184:0.185))
+    (IOPATH TE_B Z (0.160:0.161:0.162) (0.279:0.280:0.282))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[2\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.164:0.165:0.165) (0.180:0.181:0.181))
+    (IOPATH TE_B Z (0.158:0.159:0.160) (0.274:0.275:0.277))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[3\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.154:0.155:0.156) (0.167:0.168:0.170))
+    (IOPATH TE_B Z (0.160:0.161:0.161) (0.267:0.268:0.268))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[4\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.158:0.158:0.159) (0.172:0.172:0.172))
+    (IOPATH TE_B Z (0.152:0.152:0.152) (0.262:0.262:0.262))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[5\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.149:0.150:0.151) (0.159:0.161:0.162))
+    (IOPATH TE_B Z (0.144:0.144:0.145) (0.244:0.244:0.245))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[6\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.150:0.151:0.151) (0.161:0.161:0.161))
+    (IOPATH TE_B Z (0.146:0.146:0.146) (0.246:0.246:0.247))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[7\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.139:0.140:0.141) (0.146:0.147:0.148))
+    (IOPATH TE_B Z (0.147:0.147:0.147) (0.235:0.235:0.236))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[8\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.145:0.146:0.146) (0.151:0.151:0.152))
+    (IOPATH TE_B Z (0.138:0.138:0.139) (0.227:0.227:0.228))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_ebufn_8")
+  (INSTANCE u_delay_mux\.gen_clockp_bufs\[9\]\.u_one_hot_tribuf\.u_ebuf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A Z (0.152:0.153:0.154) (0.163:0.164:0.165))
+    (IOPATH TE_B Z (0.146:0.147:0.148) (0.248:0.249:0.250))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_16")
+  (INSTANCE u_delay_mux\.u_clkbuf\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.060:0.078:0.097) (0.047:0.079:0.112))
+   )
+  )
+ )
+ (CELL
+  (CELLTYPE "sg13g2_buf_2")
+  (INSTANCE u_inbuf\.u_buf)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A X (0.042:0.042:0.042) (0.043:0.043:0.043))
+   )
+  )
+ )
+)
