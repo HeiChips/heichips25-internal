@@ -1886,9 +1886,9 @@
             "f_osc_multiply_factor": [ 69, 70, 71, 72, 73 ],
             "mode_xor": [ 104, 105, 106 ],
             "osc": [ 2 ],
-            "osc_out": [ 561 ],
+            "osc_out": [ 560 ],
             "resetb": [ 44 ],
-            "stable": [ 560 ]
+            "stable": [ 561 ]
           }
         }
       },
@@ -2269,7 +2269,7 @@
         },
         "osc_out": {
           "hide_name": 0,
-          "bits": [ 561 ],
+          "bits": [ 560 ],
           "attributes": {
             "hdlname": "osc_out",
             "src": "../src/heichips25_internal.sv:61.40"
@@ -2285,7 +2285,7 @@
         },
         "stable": {
           "hide_name": 0,
-          "bits": [ 560 ],
+          "bits": [ 561 ],
           "attributes": {
             "hdlname": "stable",
             "src": "../src/heichips25_internal.sv:61.49"
