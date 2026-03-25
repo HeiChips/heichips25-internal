@@ -60,7 +60,7 @@ module heichips25_internal #(
 
     wire clk0_out, clk1_out, clk2_out, osc_out, stable;
     multimode_dll u_multimode_dll (
-        .resetb(rst_n), .enable(ena), .osc(clk),
+        .resetb(rst_n), .enable(ui_in[4]), .osc(clk),
         .f_osc_multiply_factor (data[4:0]),
         .f_clk0_divider        (data[9:5]),
         .f_clk1_divider        (data[14:10]),
