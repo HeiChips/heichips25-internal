@@ -1,102 +1,135 @@
-
-// Plain Verilog testbench for `heichips25_internal`.
-// Minimal: provides a global CONFIG_STREAM and SELECT value, a clock and reset,
-// streams CONFIG_STREAM LSB-first into the DUT shift register via ui_in[1]
-// while ui_in[0] (enable) is high. Does not declare or stub any other modules.
-
 `timescale 1ns/1ps
+`default_nettype none
 
-module testbench;
+module tb_heichips25_internal;
 
-	// --- Global configuration parameters (change these at the top of the file)
-	// Which of the 4 mux inputs to present on the outputs (maps to ui_in[3:2])
-	parameter [1:0] SELECT = 2'b00;
+    parameter integer AW = 4;
+    parameter integer DW = 4;
+    parameter integer MUX_W = 24;
 
-	// Width of the configuration stream used by the DUT (matches internal width)
-	// Default in DUT: CONFIG_BASE=102, AW=4, DW=4 -> WIDTH = 126
-	parameter integer CONFIG_WIDTH = 126;
+    parameter integer CONFIG_BASE = 102;
+    parameter integer WIDTH = CONFIG_BASE + (2*AW) + (4*DW);
 
-	// Provide a global configuration bitstream (LSB first when shifting into DUT)
-	parameter [CONFIG_WIDTH-1:0] CONFIG_STREAM = {CONFIG_WIDTH{1'b0}};
+    // Global simulation parameters
+    parameter real CLK_FREQ_MHZ = 10;
+    parameter [WIDTH-1:0] SHIFT_WORD = {{(WIDTH-5){1'b0}}, 5'd12};
+    parameter [1:0] MUX_SEL = 2'b00;
+    parameter integer SIM_TIME_US = 50;
 
-	// --- DUT interface signals
-	reg  [7:0] ui_in;
-	wire [7:0] uo_out;
-	wire [7:0] uio_in;   // tied low in this simple bench
-	wire [7:0] uio_out;
-	wire [7:0] uio_oe;
-	reg        ena;
-	reg        clk;
-	reg        rst_n;
+    localparam real CLK_PERIOD_NS = 1000.0 / CLK_FREQ_MHZ;
+    localparam real HALF_PERIOD_NS = CLK_PERIOD_NS / 2.0;
+    localparam integer SIM_TIME_NS = SIM_TIME_US * 1000;
 
-	// analog pins (inout in DUT) - left as wires in this bench
-	wire analog_pin0;
-	wire analog_pin1;
-	wire analog_pin2;
+    reg  [7:0] ui_in;
+    wire [7:0] uo_out;
+    reg  [7:0] uio_in;
+    wire [7:0] uio_out;
+    wire [7:0] uio_oe;
+    reg        ena;
+    reg        clk;
+    reg        rst_n;
 
-	// tie unused external inputs
-	assign uio_in = 8'h00;
+    wire analog_pin0;
+    wire analog_pin1;
+    wire analog_pin2;
 
-	// Instantiate DUT (no parameter override)
-	heichips25_internal dut (
-		.ui_in    (ui_in),
-		.uo_out   (uo_out),
-		.uio_in   (uio_in),
-		.uio_out  (uio_out),
-		.uio_oe   (uio_oe),
-		.ena      (ena),
-		.clk      (clk),
-		.rst_n    (rst_n),
-		.analog_pin0(analog_pin0),
-		.analog_pin1(analog_pin1),
-		.analog_pin2(analog_pin2)
-	);
+    integer i;
 
-	// --- Clock generator
-	initial begin
-		clk = 1'b0;
-		forever #5 clk = ~clk; // 100 MHz nominal (10 ns period)
-	end
+    heichips25_internal dut (
+        .ui_in(ui_in),
+        .uo_out(uo_out),
+        .uio_in(uio_in),
+        .uio_out(uio_out),
+        .uio_oe(uio_oe),
+        .ena(ena),
+        .clk(clk),
+        .rst_n(rst_n),
+        .analog_pin0(analog_pin0),
+        .analog_pin1(analog_pin1),
+        .analog_pin2(analog_pin2)
+    );
 
-	// --- Simple reset and stimulus
-	integer i;
-	reg [CONFIG_WIDTH-1:0] cfg_bits;
+    // Clock generation
+    initial begin
+        clk = 1'b0;
+        forever #(HALF_PERIOD_NS) clk = ~clk;
+    end
 
-	initial begin
-		// default inputs
-		ui_in = 8'h00;
-		ena   = 1'b1; // as per DUT comment, design sees ena=1 when powered
+    function [WIDTH-1:0] reverse_bits;
+        input [WIDTH-1:0] in_word;
+        integer k;
+        begin
+            for (k = 0; k < WIDTH; k = k + 1)
+                reverse_bits[k] = in_word[WIDTH-1-k];
+        end
+    endfunction
 
-		// reset pulse
-		rst_n = 1'b0;
-		#20;
-		rst_n = 1'b1;
+    task apply_reset;
+        begin
+            ui_in   = 8'b0;
+            uio_in  = 8'b0;
+            ena     = 1'b0;
+            rst_n   = 1'b0;
 
-		// set mux select (ui_in[3:2]) and keep other control bits low
-		ui_in[3:2] = SELECT;
-		ui_in[7:4] = 4'h0; // memory controls left zero for this simple bench
+            // Keep mux select fixed, memory controls low
+            ui_in[7:4] = 4'b0000;
+            ui_in[3:2] = MUX_SEL;
+            ui_in[1]   = 1'b0;
+            ui_in[0]   = 1'b0;
 
-		// prepare configuration stream (use parameter value)
-		cfg_bits = CONFIG_STREAM;
+            repeat (4) @(posedge clk);
+            rst_n = 1'b1;
+            repeat (2) @(posedge clk);
+        end
+    endtask
 
-		// Drive enable high and shift CONFIG_WIDTH bits LSB-first into ui_in[1]
-		ui_in[0] = 1'b1; // shift enable
-		for (i = 0; i < CONFIG_WIDTH; i = i + 1) begin
-			ui_in[1] = cfg_bits[i];
-			@(posedge clk);
-		end
+    task shift_word_msb_first;
+        begin
+            for (i = WIDTH-1; i >= 0; i = i - 1) begin
+                @(negedge clk);
+                ui_in[3:2] = MUX_SEL;
+                ui_in[1]   = SHIFT_WORD[i];
+                ui_in[0]   = 1'b1;
+            end
 
-		// stop enabling further shifts
-		ui_in[0] = 1'b0;
+            @(negedge clk);
+            ui_in[0] = 1'b0;
+            ui_in[1] = 1'b0;
+        end
+    endtask
 
-		// wait a few cycles for DUT to respond
-		repeat (10) @(posedge clk);
+    initial begin
+        apply_reset();
 
-		// Print the selected output bytes
-		$display("Time=%0t SELECT=%b uo_out=%02x uio_out=%02x uio_oe=%02x", $time, SELECT, uo_out, uio_out, uio_oe);
+        $display("--------------------------------------------------");
+        $display("TB start");
+        $display("WIDTH       = %0d bits", WIDTH);
+        $display("CLK FREQ    = %0f MHz", CLK_FREQ_MHZ);
+        $display("MUX_SEL     = %b", MUX_SEL);
+        $display("SHIFT_WORD  = %b", SHIFT_WORD);
+        $display("SIM_TIME_US = %0d us", SIM_TIME_US);
+        $display("--------------------------------------------------");
 
-		// finish simulation
-		#10 $finish;
-	end
+        shift_word_msb_first();
+
+        // ena only goes high after all bits were shifted in
+        @(negedge clk);
+        ena = 1'b1;
+
+        repeat (2) @(posedge clk);
+
+        $display("uo_out  = %b", uo_out);
+        $display("uio_out = %b", uio_out);
+        $display("uio_oe  = %b", uio_oe);
+        $display("--------------------------------------------------");
+    end
+
+    initial begin
+        #SIM_TIME_NS;
+        $display("Reached simulation limit of %0d us", SIM_TIME_US);
+        $finish;
+    end
 
 endmodule
+
+`default_nettype wire

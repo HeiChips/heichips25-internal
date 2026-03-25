@@ -138,8 +138,4 @@ module heichips25_internal #(
     assign uo_out  = mux_bus[7:0];   
     assign uio_out = mux_bus[15:8];  
     assign uio_oe = mux_bus[23:16]; 
-
-  
-   
-
 endmodule

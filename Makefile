@@ -242,3 +242,11 @@ clean:
 	rm -f basys3.json basys3.bin basys3.fasm basys3.frames basys3.bit basys3-yosys.log
 	rm -f boolean.json boolean.bin boolean.fasm boolean.frames boolean.bit boolean-yosys.log
 	rm -f nano9k.json nano9k.bin nano9k.fasm nano9k.frames nano9k.fs nano9k-yosys.log nano9k_pnr.json
+
+tb_shiftreg:
+	iverilog -g2012 -o ./tb/out/shift_reg.vvp \
+	./tb/tb_shiftreg.sv \
+	./src/shift_reg.v
+	
+	vvp ./tb/out/shift_reg.vvp 
+	gtkwave ./tb/out/shift_reg.vcd
